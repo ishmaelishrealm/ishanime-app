@@ -1,0 +1,48 @@
+{
+  "name": "ishanime",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "server": "node server/index.js",
+    "server:dev": "nodemon server/index.js",
+    "verify:vercel": "node scripts/verify-vercel.js",
+    "deploy:railway": "node scripts/deploy-railway.js",
+    "deploy:backend": "node scripts/deploy-railway-enhanced.js",
+    "deploy:frontend": "npm run verify:vercel && node scripts/deploy-vercel.js",
+    "deploy:vercel": "npm run verify:vercel && git add . && git commit -m \"Vercel auto-deploy\" && git push origin master",
+    "deploy:full": "node scripts/deploy-full.js",
+    "deploy": "npm run deploy:full",
+    "setup:deploy": "node scripts/setup-deployment.js"
+  },
+  "dependencies": {
+    "@types/node": "^24.7.1",
+    "axios": "^1.4.0",
+    "clsx": "^2.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "framer-motion": "^10.16.4",
+    "lucide-react": "^0.294.0",
+    "morgan": "^1.10.0",
+    "motion": "^12.23.24",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "slugify": "^1.6.6",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.37",
+    "@types/react-dom": "^18.2.15",
+    "@vitejs/plugin-react": "^4.1.1",
+    "autoprefixer": "^10.4.16",
+    "nodemon": "^2.0.20",
+    "postcss": "^8.4.31",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  }
+}
